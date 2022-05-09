@@ -1,0 +1,417 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (malloc) failed to allocate 32756 bytes for ChunkPool::allocate
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   In 32 bit mode, the process size limit was hit
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Use 64 bit Java on a 64 bit OS
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (allocation.cpp:273), pid=17360, tid=0x00002518
+#
+# JRE version: Java(TM) SE Runtime Environment (8.0_181-b13) (build 1.8.0_181-b13)
+# Java VM: Java HotSpot(TM) Server VM (25.181-b13 mixed mode windows-x86 )
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00cc1400):  JavaThread "main" [_thread_in_vm, id=9496, stack(0x00b50000,0x00ba0000)]
+
+Stack: [0x00b50000,0x00ba0000],  sp=0x00b9e93c,  free space=314k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x1c368b]
+V  [jvm.dll+0x1bbd58]
+V  [jvm.dll+0x995e1]
+V  [jvm.dll+0x997bd]
+V  [jvm.dll+0x99ca7]
+V  [jvm.dll+0xb1864]
+V  [jvm.dll+0x94050]
+V  [jvm.dll+0x9432a]
+V  [jvm.dll+0x95000]
+V  [jvm.dll+0x954c5]
+V  [jvm.dll+0x956ab]
+V  [jvm.dll+0xc33ba]
+V  [jvm.dll+0xcc208]
+V  [jvm.dll+0xcdd44]
+V  [jvm.dll+0xce108]
+V  [jvm.dll+0x8d791]
+j  com.sun.tools.javac.comp.Resolve.resolveQualifiedMethod(Lcom/sun/tools/javac/comp/Resolve$MethodResolutionContext;Lcom/sun/tools/javac/util/JCDiagnostic$DiagnosticPosition;Lcom/sun/tools/javac/comp/Env;Lcom/sun/tools/javac/code/Symbol;Lcom/sun/tools/javac/code/Type;Lcom/sun/tools/javac/util/Name;Lcom/sun/tools/javac/util/List;Lcom/sun/tools/javac/util/List;)Lcom/sun/tools/javac/code/Symbol;+6
+j  com.sun.tools.javac.comp.Resolve.resolveQualifiedMethod(Lcom/sun/tools/javac/util/JCDiagnostic$DiagnosticPosition;Lcom/sun/tools/javac/comp/Env;Lcom/sun/tools/javac/code/Symbol;Lcom/sun/tools/javac/code/Type;Lcom/sun/tools/javac/util/Name;Lcom/sun/tools/javac/util/List;Lcom/sun/tools/javac/util/List;)Lcom/sun/tools/javac/code/Symbol;+20
+j  com.sun.tools.javac.comp.Attr.selectSym(Lcom/sun/tools/javac/tree/JCTree$JCFieldAccess;Lcom/sun/tools/javac/code/Symbol;Lcom/sun/tools/javac/code/Type;Lcom/sun/tools/javac/comp/Env;Lcom/sun/tools/javac/comp/Attr$ResultInfo;)Lcom/sun/tools/javac/code/Symbol;+151
+j  com.sun.tools.javac.comp.Attr.visitSelect(Lcom/sun/tools/javac/tree/JCTree$JCFieldAccess;)V+324
+j  com.sun.tools.javac.tree.JCTree$JCFieldAccess.accept(Lcom/sun/tools/javac/tree/JCTree$Visitor;)V+2
+j  com.sun.tools.javac.comp.Attr.attribTree(Lcom/sun/tools/javac/tree/JCTree;Lcom/sun/tools/javac/comp/Env;Lcom/sun/tools/javac/comp/Attr$ResultInfo;)Lcom/sun/tools/javac/code/Type;+24
+j  com.sun.tools.javac.comp.Attr.visitApply(Lcom/sun/tools/javac/tree/JCTree$JCMethodInvocation;)V+676
+j  com.sun.tools.javac.tree.JCTree$JCMethodInvocation.accept(Lcom/sun/tools/javac/tree/JCTree$Visitor;)V+2
+j  com.sun.tools.javac.comp.Attr.attribTree(Lcom/sun/tools/javac/tree/JCTree;Lcom/sun/tools/javac/comp/Env;Lcom/sun/tools/javac/comp/Attr$ResultInfo;)Lcom/sun/tools/javac/code/Type;+24
+j  com.sun.tools.javac.comp.Attr.visitSelect(Lcom/sun/tools/javac/tree/JCTree$JCFieldAccess;)V+115
+j  com.sun.tools.javac.tree.JCTree$JCFieldAccess.accept(Lcom/sun/tools/javac/tree/JCTree$Visitor;)V+2
+j  com.sun.tools.javac.comp.Attr.attribTree(Lcom/sun/tools/javac/tree/JCTree;Lcom/sun/tools/javac/comp/Env;Lcom/sun/tools/javac/comp/Attr$ResultInfo;)Lcom/sun/tools/javac/code/Type;+24
+j  com.sun.tools.javac.comp.Attr.visitApply(Lcom/sun/tools/javac/tree/JCTree$JCMethodInvocation;)V+676
+j  com.sun.tools.javac.tree.JCTree$JCMethodInvocation.accept(Lcom/sun/tools/javac/tree/JCTree$Visitor;)V+2
+j  com.sun.tools.javac.comp.Attr.attribTree(Lcom/sun/tools/javac/tree/JCTree;Lcom/sun/tools/javac/comp/Env;Lcom/sun/tools/javac/comp/Attr$ResultInfo;)Lcom/sun/tools/javac/code/Type;+24
+j  com.sun.tools.javac.comp.Attr.attribExpr(Lcom/sun/tools/javac/tree/JCTree;Lcom/sun/tools/javac/comp/Env;)Lcom/sun/tools/javac/code/Type;+7
+j  com.sun.tools.javac.comp.Attr.visitBinary(Lcom/sun/tools/javac/tree/JCTree$JCBinary;)V+47
+j  com.sun.tools.javac.tree.JCTree$JCBinary.accept(Lcom/sun/tools/javac/tree/JCTree$Visitor;)V+2
+j  com.sun.tools.javac.comp.Attr.attribTree(Lcom/sun/tools/javac/tree/JCTree;Lcom/sun/tools/javac/comp/Env;Lcom/sun/tools/javac/comp/Attr$ResultInfo;)Lcom/sun/tools/javac/code/Type;+24
+j  com.sun.tools.javac.comp.Attr.visitParens(Lcom/sun/tools/javac/tree/JCTree$JCParens;)V+13
+j  com.sun.tools.javac.tree.JCTree$JCParens.accept(Lcom/sun/tools/javac/tree/JCTree$Visitor;)V+2
+j  com.sun.tools.javac.comp.Attr.attribTree(Lcom/sun/tools/javac/tree/JCTree;Lcom/sun/tools/javac/comp/Env;Lcom/sun/tools/javac/comp/Attr$ResultInfo;)Lcom/sun/tools/javac/code/Type;+24
+j  com.sun.tools.javac.comp.Attr.attribExpr(Lcom/sun/tools/javac/tree/JCTree;Lcom/sun/tools/javac/comp/Env;Lcom/sun/tools/javac/code/Type;)Lcom/sun/tools/javac/code/Type;+30
+j  com.sun.tools.javac.comp.Attr.visitIf(Lcom/sun/tools/javac/tree/JCTree$JCIf;)V+16
+j  com.sun.tools.javac.tree.JCTree$JCIf.accept(Lcom/sun/tools/javac/tree/JCTree$Visitor;)V+2
+j  com.sun.tools.javac.comp.Attr.attribTree(Lcom/sun/tools/javac/tree/JCTree;Lcom/sun/tools/javac/comp/Env;Lcom/sun/tools/javac/comp/Attr$ResultInfo;)Lcom/sun/tools/javac/code/Type;+24
+j  com.sun.tools.javac.comp.Attr.attribStat(Lcom/sun/tools/javac/tree/JCTree;Lcom/sun/tools/javac/comp/Env;)Lcom/sun/tools/javac/code/Type;+7
+j  com.sun.tools.javac.comp.Attr.attribStats(Lcom/sun/tools/javac/util/List;Lcom/sun/tools/javac/comp/Env;)V+18
+j  com.sun.tools.javac.comp.Attr.visitBlock(Lcom/sun/tools/javac/tree/JCTree$JCBlock;)V+318
+j  com.sun.tools.javac.tree.JCTree$JCBlock.accept(Lcom/sun/tools/javac/tree/JCTree$Visitor;)V+2
+j  com.sun.tools.javac.comp.Attr.attribTree(Lcom/sun/tools/javac/tree/JCTree;Lcom/sun/tools/javac/comp/Env;Lcom/sun/tools/javac/comp/Attr$ResultInfo;)Lcom/sun/tools/javac/code/Type;+24
+j  com.sun.tools.javac.comp.Attr.attribStat(Lcom/sun/tools/javac/tree/JCTree;Lcom/sun/tools/javac/comp/Env;)Lcom/sun/tools/javac/code/Type;+7
+j  com.sun.tools.javac.comp.Attr.visitMethodDef(Lcom/sun/tools/javac/tree/JCTree$JCMethodDecl;)V+1117
+j  com.sun.tools.javac.tree.JCTree$JCMethodDecl.accept(Lcom/sun/tools/javac/tree/JCTree$Visitor;)V+2
+j  com.sun.tools.javac.comp.Attr.attribTree(Lcom/sun/tools/javac/tree/JCTree;Lcom/sun/tools/javac/comp/Env;Lcom/sun/tools/javac/comp/Attr$ResultInfo;)Lcom/sun/tools/javac/code/Type;+24
+j  com.sun.tools.javac.comp.Attr.attribStat(Lcom/sun/tools/javac/tree/JCTree;Lcom/sun/tools/javac/comp/Env;)Lcom/sun/tools/javac/code/Type;+7
+j  com.sun.tools.javac.comp.Attr.attribClassBody(Lcom/sun/tools/javac/comp/Env;Lcom/sun/tools/javac/code/Symbol$ClassSymbol;)V+472
+j  com.sun.tools.javac.comp.Attr.attribClass(Lcom/sun/tools/javac/code/Symbol$ClassSymbol;)V+392
+j  com.sun.tools.javac.comp.Attr.attribClass(Lcom/sun/tools/javac/util/JCDiagnostic$DiagnosticPosition;Lcom/sun/tools/javac/code/Symbol$ClassSymbol;)V+9
+j  com.sun.tools.javac.comp.Attr.attrib(Lcom/sun/tools/javac/comp/Env;)V+36
+j  com.sun.tools.javac.main.JavaCompiler.attribute(Lcom/sun/tools/javac/comp/Env;)Lcom/sun/tools/javac/comp/Env;+176
+j  com.sun.tools.javac.main.JavaCompiler.compile2()V+177
+j  com.sun.tools.javac.main.JavaCompiler.compile(Lcom/sun/tools/javac/util/List;Lcom/sun/tools/javac/util/List;Ljava/lang/Iterable;)V+165
+j  com.sun.tools.javac.main.Main.compile([Ljava/lang/String;[Ljava/lang/String;Lcom/sun/tools/javac/util/Context;Lcom/sun/tools/javac/util/List;Ljava/lang/Iterable;)Lcom/sun/tools/javac/main/Main$Result;+1299
+j  com.sun.tools.javac.main.Main.compile([Ljava/lang/String;Lcom/sun/tools/javac/util/Context;Lcom/sun/tools/javac/util/List;Ljava/lang/Iterable;)Lcom/sun/tools/javac/main/Main$Result;+7
+j  com.sun.tools.javac.main.Main.compile([Ljava/lang/String;Lcom/sun/tools/javac/util/Context;)Lcom/sun/tools/javac/main/Main$Result;+7
+j  com.sun.tools.javac.main.Main.compile([Ljava/lang/String;)Lcom/sun/tools/javac/main/Main$Result;+15
+j  com.sun.tools.javac.Main.compile([Ljava/lang/String;)I+12
+j  com.sun.tools.javac.Main.main([Ljava/lang/String;)V+1
+v  ~StubRoutines::call_stub
+V  [jvm.dll+0x170d35]
+V  [jvm.dll+0x245a7e]
+V  [jvm.dll+0x170dce]
+V  [jvm.dll+0xeaac7]
+V  [jvm.dll+0xf305f]
+C  [jli.dll+0x42f3]
+C  [jli.dll+0xac1f]
+C  [jli.dll+0xaca9]
+C  [KERNEL32.DLL+0x1fa29]
+C  [ntdll.dll+0x67a7e]
+C  [ntdll.dll+0x67a4e]
+C  0x00000000
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  com.sun.tools.javac.comp.Resolve.resolveQualifiedMethod(Lcom/sun/tools/javac/comp/Resolve$MethodResolutionContext;Lcom/sun/tools/javac/util/JCDiagnostic$DiagnosticPosition;Lcom/sun/tools/javac/comp/Env;Lcom/sun/tools/javac/code/Symbol;Lcom/sun/tools/javac/code/Type;Lcom/sun/tools/javac/util/Name;Lcom/sun/tools/javac/util/List;Lcom/sun/tools/javac/util/List;)Lcom/sun/tools/javac/code/Symbol;+6
+j  com.sun.tools.javac.comp.Resolve.resolveQualifiedMethod(Lcom/sun/tools/javac/util/JCDiagnostic$DiagnosticPosition;Lcom/sun/tools/javac/comp/Env;Lcom/sun/tools/javac/code/Symbol;Lcom/sun/tools/javac/code/Type;Lcom/sun/tools/javac/util/Name;Lcom/sun/tools/javac/util/List;Lcom/sun/tools/javac/util/List;)Lcom/sun/tools/javac/code/Symbol;+20
+j  com.sun.tools.javac.comp.Attr.selectSym(Lcom/sun/tools/javac/tree/JCTree$JCFieldAccess;Lcom/sun/tools/javac/code/Symbol;Lcom/sun/tools/javac/code/Type;Lcom/sun/tools/javac/comp/Env;Lcom/sun/tools/javac/comp/Attr$ResultInfo;)Lcom/sun/tools/javac/code/Symbol;+151
+j  com.sun.tools.javac.comp.Attr.visitSelect(Lcom/sun/tools/javac/tree/JCTree$JCFieldAccess;)V+324
+j  com.sun.tools.javac.tree.JCTree$JCFieldAccess.accept(Lcom/sun/tools/javac/tree/JCTree$Visitor;)V+2
+j  com.sun.tools.javac.comp.Attr.attribTree(Lcom/sun/tools/javac/tree/JCTree;Lcom/sun/tools/javac/comp/Env;Lcom/sun/tools/javac/comp/Attr$ResultInfo;)Lcom/sun/tools/javac/code/Type;+24
+j  com.sun.tools.javac.comp.Attr.visitApply(Lcom/sun/tools/javac/tree/JCTree$JCMethodInvocation;)V+676
+j  com.sun.tools.javac.tree.JCTree$JCMethodInvocation.accept(Lcom/sun/tools/javac/tree/JCTree$Visitor;)V+2
+j  com.sun.tools.javac.comp.Attr.attribTree(Lcom/sun/tools/javac/tree/JCTree;Lcom/sun/tools/javac/comp/Env;Lcom/sun/tools/javac/comp/Attr$ResultInfo;)Lcom/sun/tools/javac/code/Type;+24
+j  com.sun.tools.javac.comp.Attr.visitSelect(Lcom/sun/tools/javac/tree/JCTree$JCFieldAccess;)V+115
+j  com.sun.tools.javac.tree.JCTree$JCFieldAccess.accept(Lcom/sun/tools/javac/tree/JCTree$Visitor;)V+2
+j  com.sun.tools.javac.comp.Attr.attribTree(Lcom/sun/tools/javac/tree/JCTree;Lcom/sun/tools/javac/comp/Env;Lcom/sun/tools/javac/comp/Attr$ResultInfo;)Lcom/sun/tools/javac/code/Type;+24
+j  com.sun.tools.javac.comp.Attr.visitApply(Lcom/sun/tools/javac/tree/JCTree$JCMethodInvocation;)V+676
+j  com.sun.tools.javac.tree.JCTree$JCMethodInvocation.accept(Lcom/sun/tools/javac/tree/JCTree$Visitor;)V+2
+j  com.sun.tools.javac.comp.Attr.attribTree(Lcom/sun/tools/javac/tree/JCTree;Lcom/sun/tools/javac/comp/Env;Lcom/sun/tools/javac/comp/Attr$ResultInfo;)Lcom/sun/tools/javac/code/Type;+24
+j  com.sun.tools.javac.comp.Attr.attribExpr(Lcom/sun/tools/javac/tree/JCTree;Lcom/sun/tools/javac/comp/Env;)Lcom/sun/tools/javac/code/Type;+7
+j  com.sun.tools.javac.comp.Attr.visitBinary(Lcom/sun/tools/javac/tree/JCTree$JCBinary;)V+47
+j  com.sun.tools.javac.tree.JCTree$JCBinary.accept(Lcom/sun/tools/javac/tree/JCTree$Visitor;)V+2
+j  com.sun.tools.javac.comp.Attr.attribTree(Lcom/sun/tools/javac/tree/JCTree;Lcom/sun/tools/javac/comp/Env;Lcom/sun/tools/javac/comp/Attr$ResultInfo;)Lcom/sun/tools/javac/code/Type;+24
+j  com.sun.tools.javac.comp.Attr.visitParens(Lcom/sun/tools/javac/tree/JCTree$JCParens;)V+13
+j  com.sun.tools.javac.tree.JCTree$JCParens.accept(Lcom/sun/tools/javac/tree/JCTree$Visitor;)V+2
+j  com.sun.tools.javac.comp.Attr.attribTree(Lcom/sun/tools/javac/tree/JCTree;Lcom/sun/tools/javac/comp/Env;Lcom/sun/tools/javac/comp/Attr$ResultInfo;)Lcom/sun/tools/javac/code/Type;+24
+j  com.sun.tools.javac.comp.Attr.attribExpr(Lcom/sun/tools/javac/tree/JCTree;Lcom/sun/tools/javac/comp/Env;Lcom/sun/tools/javac/code/Type;)Lcom/sun/tools/javac/code/Type;+30
+j  com.sun.tools.javac.comp.Attr.visitIf(Lcom/sun/tools/javac/tree/JCTree$JCIf;)V+16
+j  com.sun.tools.javac.tree.JCTree$JCIf.accept(Lcom/sun/tools/javac/tree/JCTree$Visitor;)V+2
+j  com.sun.tools.javac.comp.Attr.attribTree(Lcom/sun/tools/javac/tree/JCTree;Lcom/sun/tools/javac/comp/Env;Lcom/sun/tools/javac/comp/Attr$ResultInfo;)Lcom/sun/tools/javac/code/Type;+24
+j  com.sun.tools.javac.comp.Attr.attribStat(Lcom/sun/tools/javac/tree/JCTree;Lcom/sun/tools/javac/comp/Env;)Lcom/sun/tools/javac/code/Type;+7
+j  com.sun.tools.javac.comp.Attr.attribStats(Lcom/sun/tools/javac/util/List;Lcom/sun/tools/javac/comp/Env;)V+18
+j  com.sun.tools.javac.comp.Attr.visitBlock(Lcom/sun/tools/javac/tree/JCTree$JCBlock;)V+318
+j  com.sun.tools.javac.tree.JCTree$JCBlock.accept(Lcom/sun/tools/javac/tree/JCTree$Visitor;)V+2
+j  com.sun.tools.javac.comp.Attr.attribTree(Lcom/sun/tools/javac/tree/JCTree;Lcom/sun/tools/javac/comp/Env;Lcom/sun/tools/javac/comp/Attr$ResultInfo;)Lcom/sun/tools/javac/code/Type;+24
+j  com.sun.tools.javac.comp.Attr.attribStat(Lcom/sun/tools/javac/tree/JCTree;Lcom/sun/tools/javac/comp/Env;)Lcom/sun/tools/javac/code/Type;+7
+j  com.sun.tools.javac.comp.Attr.visitMethodDef(Lcom/sun/tools/javac/tree/JCTree$JCMethodDecl;)V+1117
+j  com.sun.tools.javac.tree.JCTree$JCMethodDecl.accept(Lcom/sun/tools/javac/tree/JCTree$Visitor;)V+2
+j  com.sun.tools.javac.comp.Attr.attribTree(Lcom/sun/tools/javac/tree/JCTree;Lcom/sun/tools/javac/comp/Env;Lcom/sun/tools/javac/comp/Attr$ResultInfo;)Lcom/sun/tools/javac/code/Type;+24
+j  com.sun.tools.javac.comp.Attr.attribStat(Lcom/sun/tools/javac/tree/JCTree;Lcom/sun/tools/javac/comp/Env;)Lcom/sun/tools/javac/code/Type;+7
+j  com.sun.tools.javac.comp.Attr.attribClassBody(Lcom/sun/tools/javac/comp/Env;Lcom/sun/tools/javac/code/Symbol$ClassSymbol;)V+472
+j  com.sun.tools.javac.comp.Attr.attribClass(Lcom/sun/tools/javac/code/Symbol$ClassSymbol;)V+392
+j  com.sun.tools.javac.comp.Attr.attribClass(Lcom/sun/tools/javac/util/JCDiagnostic$DiagnosticPosition;Lcom/sun/tools/javac/code/Symbol$ClassSymbol;)V+9
+j  com.sun.tools.javac.comp.Attr.attrib(Lcom/sun/tools/javac/comp/Env;)V+36
+j  com.sun.tools.javac.main.JavaCompiler.attribute(Lcom/sun/tools/javac/comp/Env;)Lcom/sun/tools/javac/comp/Env;+176
+j  com.sun.tools.javac.main.JavaCompiler.compile2()V+177
+j  com.sun.tools.javac.main.JavaCompiler.compile(Lcom/sun/tools/javac/util/List;Lcom/sun/tools/javac/util/List;Ljava/lang/Iterable;)V+165
+j  com.sun.tools.javac.main.Main.compile([Ljava/lang/String;[Ljava/lang/String;Lcom/sun/tools/javac/util/Context;Lcom/sun/tools/javac/util/List;Ljava/lang/Iterable;)Lcom/sun/tools/javac/main/Main$Result;+1299
+j  com.sun.tools.javac.main.Main.compile([Ljava/lang/String;Lcom/sun/tools/javac/util/Context;Lcom/sun/tools/javac/util/List;Ljava/lang/Iterable;)Lcom/sun/tools/javac/main/Main$Result;+7
+j  com.sun.tools.javac.main.Main.compile([Ljava/lang/String;Lcom/sun/tools/javac/util/Context;)Lcom/sun/tools/javac/main/Main$Result;+7
+j  com.sun.tools.javac.main.Main.compile([Ljava/lang/String;)Lcom/sun/tools/javac/main/Main$Result;+15
+j  com.sun.tools.javac.Main.compile([Ljava/lang/String;)I+12
+j  com.sun.tools.javac.Main.main([Ljava/lang/String;)V+1
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x3ff21000 JavaThread "Service Thread" daemon [_thread_blocked, id=6884, stack(0x40550000,0x405a0000)]
+  0x3fedbc00 JavaThread "C1 CompilerThread2" daemon [_thread_blocked, id=11812, stack(0x404c0000,0x40510000)]
+  0x3fed7000 JavaThread "C2 CompilerThread1" daemon [_thread_blocked, id=9536, stack(0x40430000,0x40480000)]
+  0x3fed5800 JavaThread "C2 CompilerThread0" daemon [_thread_in_native, id=16616, stack(0x403a0000,0x403f0000)]
+  0x3fed4800 JavaThread "Attach Listener" daemon [_thread_blocked, id=16552, stack(0x40310000,0x40360000)]
+  0x3fed3800 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=12480, stack(0x40280000,0x402d0000)]
+  0x3febfc00 JavaThread "Finalizer" daemon [_thread_blocked, id=13864, stack(0x400e0000,0x40130000)]
+  0x3feaa000 JavaThread "Reference Handler" daemon [_thread_blocked, id=11724, stack(0x40050000,0x400a0000)]
+=>0x00cc1400 JavaThread "main" [_thread_in_vm, id=9496, stack(0x00b50000,0x00ba0000)]
+
+Other Threads:
+  0x3fea5000 VMThread [stack: 0x3ffc0000,0x40010000] [id=16380]
+  0x3ff5d400 WatcherThread [stack: 0x405e0000,0x40630000] [id=12424]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap:
+ PSYoungGen      total 15616K, used 9825K [0x2f4c0000, 0x30d40000, 0x3de00000)
+  eden space 13312K, 73% used [0x2f4c0000,0x2fe585d0,0x301c0000)
+  from space 2304K, 0% used [0x30700000,0x30700000,0x30940000)
+  to   space 5376K, 0% used [0x301c0000,0x301c0000,0x30700000)
+ ParOldGen       total 15872K, used 6682K [0x12200000, 0x13180000, 0x2f4c0000)
+  object space 15872K, 42% used [0x12200000,0x12886a80,0x13180000)
+ Metaspace       used 5447K, capacity 5490K, committed 5504K, reserved 5504K
+
+Card table byte_map: [0x025b0000,0x02710000] byte_map_base: 0x0251f000
+
+Marking Bits: (ParMarkBitMap*) 0x02d68bc8
+ Begin Bits: [0x3e060000, 0x3eb50000)
+ End Bits:   [0x3eb50000, 0x3f640000)
+
+Polling page: 0x00a50000
+
+CodeCache: size=245760Kb used=2309Kb max_used=2320Kb free=243450Kb
+ bounds [0x02de0000, 0x03028000, 0x11de0000]
+ total_blobs=868 nmethods=701 adapters=80
+ compilation: enabled
+
+Compilation events (10 events):
+Event: 1.956 Thread 0x3fedbc00  698       3       com.sun.tools.javac.file.ZipFileIndex$DirectoryEntry::getEntry (44 bytes)
+Event: 1.956 Thread 0x3fedbc00 nmethod 698 0x0301f708 code [0x0301f8a0, 0x0301febc]
+Event: 1.956 Thread 0x3fedbc00  699       3       java.util.Collections::indexedBinarySearch (83 bytes)
+Event: 1.957 Thread 0x3fedbc00 nmethod 699 0x0301ef48 code [0x0301f0a0, 0x0301f544]
+Event: 1.957 Thread 0x3fedbc00  700       3       java.lang.CharacterDataLatin1::isJavaIdentifierStart (23 bytes)
+Event: 1.957 Thread 0x3fedbc00 nmethod 700 0x0301eb48 code [0x0301ec60, 0x0301ee00]
+Event: 1.957 Thread 0x3fedbc00  701       3       com.sun.tools.javac.jvm.ClassReader::includeClassFile (294 bytes)
+Event: 1.959 Thread 0x3fed7000  702       4       java.lang.String::lastIndexOf (151 bytes)
+Event: 1.959 Thread 0x3fedbc00 nmethod 701 0x03020a88 code [0x03020d00, 0x03021f04]
+Event: 1.963 Thread 0x3fed7000 nmethod 702 0x0301e588 code [0x0301e680, 0x0301e890]
+
+GC Heap History (10 events):
+Event: 1.085 GC heap before
+{Heap before GC invocations=4 (full 0):
+ PSYoungGen      total 4352K, used 4346K [0x2f4c0000, 0x2fd40000, 0x3de00000)
+  eden space 4096K, 99% used [0x2f4c0000,0x2f8bf800,0x2f8c0000)
+  from space 256K, 98% used [0x2f8c0000,0x2f8ff0b8,0x2f900000)
+  to   space 256K, 0% used [0x2fd00000,0x2fd00000,0x2fd40000)
+ ParOldGen       total 5632K, used 2228K [0x12200000, 0x12780000, 0x2f4c0000)
+  object space 5632K, 39% used [0x12200000,0x1242d030,0x12780000)
+ Metaspace       used 4348K, capacity 4396K, committed 4416K, reserved 4480K
+Event: 1.090 GC heap after
+Heap after GC invocations=4 (full 0):
+ PSYoungGen      total 8448K, used 240K [0x2f4c0000, 0x2fd40000, 0x3de00000)
+  eden space 8192K, 0% used [0x2f4c0000,0x2f4c0000,0x2fcc0000)
+  from space 256K, 93% used [0x2fd00000,0x2fd3c010,0x2fd40000)
+  to   space 256K, 0% used [0x2fcc0000,0x2fcc0000,0x2fd00000)
+ ParOldGen       total 5632K, used 3497K [0x12200000, 0x12780000, 0x2f4c0000)
+  object space 5632K, 62% used [0x12200000,0x1256a6c8,0x12780000)
+ Metaspace       used 4348K, capacity 4396K, committed 4416K, reserved 4480K
+}
+Event: 1.434 GC heap before
+{Heap before GC invocations=5 (full 0):
+ PSYoungGen      total 8448K, used 8301K [0x2f4c0000, 0x2fd40000, 0x3de00000)
+  eden space 8192K, 98% used [0x2f4c0000,0x2fc9f590,0x2fcc0000)
+  from space 256K, 93% used [0x2fd00000,0x2fd3c010,0x2fd40000)
+  to   space 256K, 0% used [0x2fcc0000,0x2fcc0000,0x2fd00000)
+ ParOldGen       total 5632K, used 3497K [0x12200000, 0x12780000, 0x2f4c0000)
+  object space 5632K, 62% used [0x12200000,0x1256a6c8,0x12780000)
+ Metaspace       used 4890K, capacity 4908K, committed 4992K, reserved 5504K
+Event: 1.452 GC heap after
+Heap after GC invocations=5 (full 0):
+ PSYoungGen      total 8448K, used 240K [0x2f4c0000, 0x30940000, 0x3de00000)
+  eden space 8192K, 0% used [0x2f4c0000,0x2f4c0000,0x2fcc0000)
+  from space 256K, 93% used [0x2fcc0000,0x2fcfc030,0x2fd00000)
+  to   space 2304K, 0% used [0x30700000,0x30700000,0x30940000)
+ ParOldGen       total 5632K, used 5075K [0x12200000, 0x12780000, 0x2f4c0000)
+  object space 5632K, 90% used [0x12200000,0x126f4e38,0x12780000)
+ Metaspace       used 4890K, capacity 4908K, committed 4992K, reserved 5504K
+}
+Event: 1.452 GC heap before
+{Heap before GC invocations=6 (full 1):
+ PSYoungGen      total 8448K, used 240K [0x2f4c0000, 0x30940000, 0x3de00000)
+  eden space 8192K, 0% used [0x2f4c0000,0x2f4c0000,0x2fcc0000)
+  from space 256K, 93% used [0x2fcc0000,0x2fcfc030,0x2fd00000)
+  to   space 2304K, 0% used [0x30700000,0x30700000,0x30940000)
+ ParOldGen       total 5632K, used 5075K [0x12200000, 0x12780000, 0x2f4c0000)
+  object space 5632K, 90% used [0x12200000,0x126f4e38,0x12780000)
+ Metaspace       used 4890K, capacity 4908K, committed 4992K, reserved 5504K
+Event: 1.467 GC heap after
+Heap after GC invocations=6 (full 1):
+ PSYoungGen      total 8448K, used 0K [0x2f4c0000, 0x30940000, 0x3de00000)
+  eden space 8192K, 0% used [0x2f4c0000,0x2f4c0000,0x2fcc0000)
+  from space 256K, 0% used [0x2fcc0000,0x2fcc0000,0x2fd00000)
+  to   space 2304K, 0% used [0x30700000,0x30700000,0x30940000)
+ ParOldGen       total 7936K, used 3085K [0x12200000, 0x129c0000, 0x2f4c0000)
+  object space 7936K, 38% used [0x12200000,0x12503470,0x129c0000)
+ Metaspace       used 4890K, capacity 4908K, committed 4992K, reserved 5504K
+}
+Event: 1.560 GC heap before
+{Heap before GC invocations=7 (full 1):
+ PSYoungGen      total 8448K, used 8189K [0x2f4c0000, 0x30940000, 0x3de00000)
+  eden space 8192K, 99% used [0x2f4c0000,0x2fcbf6f0,0x2fcc0000)
+  from space 256K, 0% used [0x2fcc0000,0x2fcc0000,0x2fd00000)
+  to   space 2304K, 0% used [0x30700000,0x30700000,0x30940000)
+ ParOldGen       total 7936K, used 3085K [0x12200000, 0x129c0000, 0x2f4c0000)
+  object space 7936K, 38% used [0x12200000,0x12503470,0x129c0000)
+ Metaspace       used 4901K, capacity 4940K, committed 4992K, reserved 5504K
+Event: 1.568 GC heap after
+Heap after GC invocations=7 (full 1):
+ PSYoungGen      total 15616K, used 2303K [0x2f4c0000, 0x30d40000, 0x3de00000)
+  eden space 13312K, 0% used [0x2f4c0000,0x2f4c0000,0x301c0000)
+  from space 2304K, 99% used [0x30700000,0x3093fd38,0x30940000)
+  to   space 5376K, 0% used [0x301c0000,0x301c0000,0x30700000)
+ ParOldGen       total 7936K, used 7806K [0x12200000, 0x129c0000, 0x2f4c0000)
+  object space 7936K, 98% used [0x12200000,0x1299fba0,0x129c0000)
+ Metaspace       used 4901K, capacity 4940K, committed 4992K, reserved 5504K
+}
+Event: 1.568 GC heap before
+{Heap before GC invocations=8 (full 2):
+ PSYoungGen      total 15616K, used 2303K [0x2f4c0000, 0x30d40000, 0x3de00000)
+  eden space 13312K, 0% used [0x2f4c0000,0x2f4c0000,0x301c0000)
+  from space 2304K, 99% used [0x30700000,0x3093fd38,0x30940000)
+  to   space 5376K, 0% used [0x301c0000,0x301c0000,0x30700000)
+ ParOldGen       total 7936K, used 7806K [0x12200000, 0x129c0000, 0x2f4c0000)
+  object space 7936K, 98% used [0x12200000,0x1299fba0,0x129c0000)
+ Metaspace       used 4901K, capacity 4940K, committed 4992K, reserved 5504K
+Event: 1.614 GC heap after
+Heap after GC invocations=8 (full 2):
+ PSYoungGen      total 15616K, used 0K [0x2f4c0000, 0x30d40000, 0x3de00000)
+  eden space 13312K, 0% used [0x2f4c0000,0x2f4c0000,0x301c0000)
+  from space 2304K, 0% used [0x30700000,0x30700000,0x30940000)
+  to   space 5376K, 0% used [0x301c0000,0x301c0000,0x30700000)
+ ParOldGen       total 15872K, used 6682K [0x12200000, 0x13180000, 0x2f4c0000)
+  object space 15872K, 42% used [0x12200000,0x12886a80,0x13180000)
+ Metaspace       used 4901K, capacity 4940K, committed 4992K, reserved 5504K
+}
+
+Deoptimization events (9 events):
+Event: 1.022 Thread 0x00cc1400 Uncommon trap: reason=null_check action=make_not_entrant pc=0x02eec39c method=java.lang.String.equals(Ljava/lang/Object;)Z @ 8
+Event: 1.169 Thread 0x00cc1400 Uncommon trap: reason=unstable_if action=reinterpret pc=0x02f32e68 method=sun.nio.cs.UTF_8$Decoder.decode([BII[C)I @ 30
+Event: 1.235 Thread 0x00cc1400 Uncommon trap: reason=unstable_if action=reinterpret pc=0x02ee0100 method=java.lang.String.replace(CC)Ljava/lang/String; @ 26
+Event: 1.253 Thread 0x00cc1400 Uncommon trap: reason=unstable_if action=reinterpret pc=0x02f5c2a8 method=java.net.URI.match(CJJ)Z @ 32
+Event: 1.324 Thread 0x00cc1400 Uncommon trap: reason=class_check action=maybe_recompile pc=0x02ef8df4 method=sun.misc.URLClassPath.getLoader(I)Lsun/misc/URLClassPath$Loader; @ 94
+Event: 1.324 Thread 0x00cc1400 Uncommon trap: reason=unstable_if action=reinterpret pc=0x02f0eef4 method=java.lang.String.indexOf([CII[CIII)I @ 134
+Event: 1.423 Thread 0x00cc1400 Uncommon trap: reason=unstable_if action=reinterpret pc=0x02f0fbd0 method=java.lang.String.<init>([CII)V @ 18
+Event: 1.879 Thread 0x00cc1400 Uncommon trap: reason=unstable_if action=reinterpret pc=0x02f0c300 method=sun.misc.MetaIndex.mayContain(Ljava/lang/String;)Z @ 38
+Event: 1.880 Thread 0x00cc1400 Uncommon trap: reason=unstable_if action=reinterpret pc=0x02eee30c method=sun.misc.MetaIndex.mayContain(Ljava/lang/String;)Z @ 38
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (10 events):
+Event: 1.672 Thread 0x00cc1400 Exception <a 'java/io/FileNotFoundException'> (0x2f892f50) thrown at [C:\workspace\8-2-build-windows-i586-cygwin\jdk8u181\11358\hotspot\src\share\vm\prims\jni.cpp, line 709]
+Event: 1.673 Thread 0x00cc1400 Exception <a 'java/io/FileNotFoundException'> (0x2f893db0) thrown at [C:\workspace\8-2-build-windows-i586-cygwin\jdk8u181\11358\hotspot\src\share\vm\prims\jni.cpp, line 709]
+Event: 1.673 Thread 0x00cc1400 Exception <a 'java/io/FileNotFoundException'> (0x2f894c80) thrown at [C:\workspace\8-2-build-windows-i586-cygwin\jdk8u181\11358\hotspot\src\share\vm\prims\jni.cpp, line 709]
+Event: 1.673 Thread 0x00cc1400 Exception <a 'java/io/FileNotFoundException'> (0x2f895ba0) thrown at [C:\workspace\8-2-build-windows-i586-cygwin\jdk8u181\11358\hotspot\src\share\vm\prims\jni.cpp, line 709]
+Event: 1.673 Thread 0x00cc1400 Exception <a 'java/io/FileNotFoundException'> (0x2f896ad0) thrown at [C:\workspace\8-2-build-windows-i586-cygwin\jdk8u181\11358\hotspot\src\share\vm\prims\jni.cpp, line 709]
+Event: 1.673 Thread 0x00cc1400 Exception <a 'java/io/FileNotFoundException'> (0x2f897990) thrown at [C:\workspace\8-2-build-windows-i586-cygwin\jdk8u181\11358\hotspot\src\share\vm\prims\jni.cpp, line 709]
+Event: 1.673 Thread 0x00cc1400 Exception <a 'java/io/FileNotFoundException'> (0x2f8987f0) thrown at [C:\workspace\8-2-build-windows-i586-cygwin\jdk8u181\11358\hotspot\src\share\vm\prims\jni.cpp, line 709]
+Event: 1.674 Thread 0x00cc1400 Exception <a 'java/io/FileNotFoundException'> (0x2f899650) thrown at [C:\workspace\8-2-build-windows-i586-cygwin\jdk8u181\11358\hotspot\src\share\vm\prims\jni.cpp, line 709]
+Event: 1.674 Thread 0x00cc1400 Exception <a 'java/io/FileNotFoundException'> (0x2f89a510) thrown at [C:\workspace\8-2-build-windows-i586-cygwin\jdk8u181\11358\hotspot\src\share\vm\prims\jni.cpp, line 709]
+Event: 1.674 Thread 0x00cc1400 Exception <a 'java/io/FileNotFoundException'> (0x2f8a5930) thrown at [C:\workspace\8-2-build-windows-i586-cygwin\jdk8u181\11358\hotspot\src\share\vm\prims\jni.cpp, line 709]
+
+Events (10 events):
+Event: 1.903 loading class java/util/Formatter$Conversion
+Event: 1.903 loading class java/util/Formatter$Conversion done
+Event: 1.903 loading class java/util/Formattable
+Event: 1.903 loading class java/util/Formattable done
+Event: 1.903 loading class com/sun/tools/javac/tree/JCTree$JCPolyExpression$PolyKind
+Event: 1.903 loading class com/sun/tools/javac/tree/JCTree$JCPolyExpression$PolyKind done
+Event: 1.904 loading class com/sun/tools/javac/code/Flags
+Event: 1.904 loading class com/sun/tools/javac/code/Flags done
+Event: 1.966 loading class com/sun/tools/javac/jvm/ClassReader$AnnotationDefaultCompleter
+Event: 1.966 loading class com/sun/tools/javac/jvm/ClassReader$AnnotationDefaultCompleter done
+
+
+Dynamic libraries:
+0x00a70000 - 0x00a76000 	C:\ProgramData\UNIVALI\Portugol Studio\java\java-windows\bin\javac.exe
+0x77b20000 - 0x77cc3000 	C:\Windows\SYSTEM32\ntdll.dll
+0x775d0000 - 0x776c0000 	C:\Windows\System32\KERNEL32.DLL
+0x773b0000 - 0x775c4000 	C:\Windows\System32\KERNELBASE.dll
+0x791c0000 - 0x791eb000 	C:\ProgramData\UNIVALI\Portugol Studio\java\java-windows\bin\jli.dll
+0x76a30000 - 0x76aab000 	C:\Windows\System32\ADVAPI32.dll
+0x77860000 - 0x7791f000 	C:\Windows\System32\msvcrt.dll
+0x76800000 - 0x76876000 	C:\Windows\System32\sechost.dll
+0x76ac0000 - 0x76b7e000 	C:\Windows\System32\RPCRT4.dll
+0x75a40000 - 0x75bdc000 	C:\Windows\System32\USER32.dll
+0x76b80000 - 0x76b98000 	C:\Windows\System32\win32u.dll
+0x77ac0000 - 0x77ae3000 	C:\Windows\System32\GDI32.dll
+0x75dd0000 - 0x75eac000 	C:\Windows\System32\gdi32full.dll
+0x75f70000 - 0x75feb000 	C:\Windows\System32\msvcp_win.dll
+0x76ba0000 - 0x76cc0000 	C:\Windows\System32\ucrtbase.dll
+0x791f0000 - 0x792af000 	C:\ProgramData\UNIVALI\Portugol Studio\java\java-windows\bin\MSVCR100.dll
+0x74420000 - 0x74630000 	C:\Windows\WinSxS\x86_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.1110_none_a8625c1886757984\COMCTL32.dll
+0x76cc0000 - 0x76ce5000 	C:\Windows\System32\IMM32.DLL
+0x7c6e0000 - 0x7c79f000 	C:\ProgramData\UNIVALI\Portugol Studio\java\java-windows\jre\bin\msvcr100.dll
+0x027b0000 - 0x02ddd000 	C:\ProgramData\UNIVALI\Portugol Studio\java\java-windows\jre\bin\server\jvm.dll
+0x75ff0000 - 0x75ff6000 	C:\Windows\System32\PSAPI.DLL
+0x51ac0000 - 0x51ac8000 	C:\Windows\SYSTEM32\WSOCK32.dll
+0x75f00000 - 0x75f63000 	C:\Windows\System32\WS2_32.dll
+0x741f0000 - 0x74218000 	C:\Windows\SYSTEM32\WINMM.dll
+0x75030000 - 0x75038000 	C:\Windows\SYSTEM32\VERSION.dll
+0x51ab0000 - 0x51abc000 	C:\ProgramData\UNIVALI\Portugol Studio\java\java-windows\jre\bin\verify.dll
+0x77cd0000 - 0x77cf2000 	C:\ProgramData\UNIVALI\Portugol Studio\java\java-windows\jre\bin\java.dll
+0x7c7d0000 - 0x7c7e4000 	C:\ProgramData\UNIVALI\Portugol Studio\java\java-windows\jre\bin\zip.dll
+0x76000000 - 0x765b5000 	C:\Windows\System32\SHELL32.dll
+0x753d0000 - 0x759dc000 	C:\Windows\SYSTEM32\windows.storage.dll
+0x77130000 - 0x773b0000 	C:\Windows\System32\combase.dll
+0x753a0000 - 0x753c4000 	C:\Windows\SYSTEM32\Wldp.dll
+0x76880000 - 0x76907000 	C:\Windows\System32\SHCORE.dll
+0x759f0000 - 0x75a35000 	C:\Windows\System32\shlwapi.dll
+0x75370000 - 0x75388000 	C:\Windows\SYSTEM32\profapi.dll
+
+VM Arguments:
+jvm_args: -Dapplication.home=C:\ProgramData\UNIVALI\Portugol Studio\java\java-windows -Xms8m 
+java_command: com.sun.tools.javac.Main -encoding utf8 -cp C:\ProgramData\UNIVALI\Portugol Studio\aplicacao\lib\absolute-layout.jar;C:\ProgramData\UNIVALI\Portugol Studio\aplicacao\lib\ant-1.9.6.jar;C:\ProgramData\UNIVALI\Portugol Studio\aplicacao\lib\ant-launcher-1.9.6.jar;C:\ProgramData\UNIVALI\Portugol Studio\aplicacao\lib\antlr-runtime-3.5.2.jar;C:\ProgramData\UNIVALI\Portugol Studio\aplicacao\lib\antlr4-4.7.2.jar;C:\ProgramData\UNIVALI\Portugol Studio\aplicacao\lib\antlr4-runtime-4.7.2.jar;C:\ProgramData\UNIVALI\Portugol Studio\aplicacao\lib\asm-5.2.jar;C:\ProgramData\UNIVALI\Portugol Studio\aplicacao\lib\autocomplete-2.6.1.jar;C:\ProgramData\UNIVALI\Portugol Studio\aplicacao\lib\cglib-3.2.5.jar;C:\ProgramData\UNIVALI\Portugol Studio\aplicacao\lib\commons-codec-1.10.jar;C:\ProgramData\UNIVALI\Portugol Studio\aplicacao\lib\commons-exec-1.3.jar;C:\ProgramData\UNIVALI\Portugol Studio\aplicacao\lib\commons-io-2.4.jar;C:\ProgramData\UNIVALI\Portugol Studio\aplicacao\lib\commons-logging-1.2.jar;C:\ProgramData\UNIVALI\Portugol Studio\aplicacao\lib\cssbox-4.7.jar;C:\ProgramData\UNIVALI\Portugol Studio\aplicacao\lib\fluent-hc-4.5.5.jar;C:\ProgramData\UNIVALI\Portugol Studio\aplicacao\lib\httpclient-4.5.5.jar;C:\ProgramData\UNIVALI\Portugol Studio\aplicacao\lib\httpclient-cache-4.3.3.jar;C:\ProgramData\UNIVALI\Portugol Studio\aplicacao\lib\httpcore-4.4.9.jar;C:\ProgramData\UNIVALI\Portugol Studio\aplicacao\lib\httpmime-4.3.3.jar;C:\ProgramData\UNIVALI\Portugol Studio\aplicacao\lib\icu4j-63.1.jar;C:\ProgramData\UNIVALI\Portugol Studio\aplicacao\lib\jackson-annotations-2.9.0.jar;C:\ProgramData\UNIVALI\Portugol Studio\aplicacao\lib\jackson-core-2.9.5.jar;C:\ProgramData\UNIVALI\Portugol Studio\aplicacao\lib\jackson-databind-2.9.5.jar;C:\ProgramData\UNIVALI\Portugol Studio\aplicacao\lib\jackson-dataformat-xml-2.9.5.jar;C:\ProgramData\UNIVALI\Portugol Studio\aplicacao\lib\jackson-module-jaxb-annotations-2.9.5.jar;C:\ProgramData\UNIVALI\Portugol Studio\aplicacao\lib\javax.json
+java_class_path (initial): C:\ProgramData\UNIVALI\Portugol Studio\java\java-windows/lib/tools.jar;C:\ProgramData\UNIVALI\Portugol Studio\java\java-windows/classes
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+JAVA_HOME=C:\Program Files\Java\jdk-17
+PATH=C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\ProgramData\UNIVALI\Portugol Studio;C:\Program Files\Java\jdk-17\bin;C:\ProgramData\chocolatey\bin;C:\Program Files\Git\cmd;C:\Users\usuario\AppData\Local\Microsoft\WindowsApps
+USERNAME=usuario
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 78 Stepping 3, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 10.0 , 64 bit Build 19041 (10.0.19041.1645)
+
+CPU:total 4 (initial active 4) (2 cores per cpu, 2 threads per core) family 6 model 78 stepping 3, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, avx2, aes, clmul, erms, 3dnowpref, lzcnt, ht, tsc, tscinvbit, bmi1, bmi2, adx
+
+Memory: 4k page, physical 8277756k(1169024k free), swap 12472060k(5232k free)
+
+vm_info: Java HotSpot(TM) Server VM (25.181-b13) for windows-x86 JRE (1.8.0_181-b13), built on Jul  7 2018 03:15:00 by "java_re" with MS VC++ 10.0 (VS2010)
+
+time: Wed May 04 16:55:35 2022
+elapsed time: 2 seconds (0d 0h 0m 2s)
+
