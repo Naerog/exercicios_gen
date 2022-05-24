@@ -1,4 +1,36 @@
+import pookotlin.Cliente
+
 fun main () {
+    var clientes = mutableListOf(
+        Cliente(
+            "Enzo",
+            "000.000.000-00",
+            12,
+            "Homem",
+            "00-00000-0000"
+        ),
+        Cliente(
+            "Olavo",
+            "000.000.000-00",
+            54,
+            "Homem",
+            "00-00000-0000"
+        ),
+        Cliente(
+            "Natanael",
+            "000.000.000-00",
+            35,
+            "Homem",
+            "00-00000-0000"
+        ),
+        Cliente(
+            "Roberta",
+            "000.000.000-00",
+            21,
+            "Mulher",
+            "00-00000-0000"
+        )
+    )
     val cliente1 = Cliente(
         "Natan",
         "000.000.000-00",
@@ -29,5 +61,4 @@ fun main () {
     cliente1.infosCliente()
     cliente2.infosCliente()
     cliente3.infosCliente()
-
-}
+    }

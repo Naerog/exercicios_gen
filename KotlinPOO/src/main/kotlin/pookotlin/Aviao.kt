@@ -1,3 +1,5 @@
+package pookotlin
+
 class Aviao (
     var turbina: Int,
     var asas: Int,
@@ -60,3 +62,4 @@ class Aviao (
         }
     }
 }
+

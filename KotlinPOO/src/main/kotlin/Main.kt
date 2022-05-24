@@ -1,4 +1,7 @@
+import pookotlin.Aviao
+
 fun main (){
+
     /*
     2) Crie uma classe avião e apresente os atributos e métodos referentes
     esta classe, em seguida crie um objeto avião, defina as instancias deste
@@ -37,4 +40,5 @@ fun main (){
     aviao.ligDesligLuzes()
     aviao.ligDesligLuzes()
     aviao.ligDesligLuzes()
+
 }
