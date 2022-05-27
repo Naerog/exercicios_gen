@@ -1,23 +1,28 @@
 package objetos
 
-open class Essenciais (){
-   private var essencial = listOf<String>("Adoado")
-   private var itensCalor = listOf<String>()
-   private var itensFrio = listOf<String>()
-   var itensBugigangasEs = listOf<String>()
-   var itensBugigangasEx = listOf<String>()
-   fun listEssencial(){
-      for(i in 0 until essencial.size) {
-         println(essencial[i])
-      }
-   }
-   open fun itensCalor (itensCalor: MutableList<String>) {
-      TODO("Lista dos itens de calor aqui man")
-   }
-   open fun listItensFrio (itensFrio: MutableList<String>) {
-   TODO("Lista dos itens de frio aqui man")
-   }
-   open fun listItensBugigangas (itensBugigangasEs: MutableList<String>, itensBugigangasEx: MutableList<String>) {
-      TODO("Lista de bugigangas essenciais aqui man")
-      TODO("Lista de bugigangas extras aqui tbm")
-   }
+open class Essenciais {
+    private var essencial = listOf(
+        "Documentos Pessoais", "Celular", "Passagem", "Cartão de Vacina",
+        "Doc. de Reservas", "Dinheiro", "Lista de Endereços", "Carregador")
+    private var essencialRoupas = listOf( "Roupa íntima", "Meias", "Camisetas ou outra partes de cima",
+            "Calça ou outra parte de baixo", "Chinelo", "Calçado", "Bolsa ou mochila")
+
+    open fun listEssencial() {
+        println("\n--- ESSENCIAL ---")
+        for (i in essencial.indices) println("${i+1}- ${essencial[i]}")
+        println("\n--- ROUPAS ESSENCIAIS ---")
+        for (i in essencialRoupas.indices) println("${i+1}- ${essencialRoupas[i]}")
+
+    }
+    open fun listItensCalor() {
+        println("\nNão esqueça de adicionar esses itens:")
+    }
+
+    open fun listItensFrio() {
+        println("\nNão esqueça de adicionar esses itens:")
+    }
+    open fun listItensBugigangas() {
+        println("\nNão esqueça de adicionar esses itens:")
+    }
+}
+

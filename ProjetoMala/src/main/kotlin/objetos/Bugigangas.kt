@@ -1,10 +1,12 @@
 package objetos
 
 class Bugigangas () : Essenciais() {
-     private var bugigangasExtras = mutableListOf<String>(
+     var itensBugigangasEs = listOf(
+          "Câmera Fotográfica", "Prendedor de Cabelo", "Consoles Portáteis",
+          "Óculos", "Livros", "Fone de Ouvido", "Cadeados")
 
-     )
-     override fun listItensBugigangas (itensBugigangas: MutableList<String>, bugigangasExtras: MutableList<String> ) {
-    println()
-    }
+     override fun listItensBugigangas() {
+          println("\n--- BUGIGANGAS ---")
+          for (i in itensBugigangasEs.indices) println("${i+1}- ${itensBugigangasEs[i]}")
+     }
 }

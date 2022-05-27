@@ -4,37 +4,76 @@ import objetos.Frio
 import objetos.Quente
 
 fun main() {
-/*
- Classes, Atributos e Objetos;
- Encapsulamento e Herança;
- */
-    val itensEssencial = Essenciais()
-    println("--- ORGANIZAÇÃO DE MALAS ---\n")
+    val essencial = Essenciais()
+    val quente = Quente()
+    val frio = Frio()
+    val bugigangas = Bugigangas()
+
     while (true) {
+        println("\n--- ORGANIZAÇÃO DE MALAS ---\n")
         print("Digite seu nome: ")
         val nome = readln()
-        print("Digite quantos dias de viagem: ")
+        print("Digite quantos dias de viagem, Sr/a.$nome ")
         val dias = readln().toInt()
-        print("Digite o clima: (Quente/Frio) ")
+        print("Digite o clima, Sr/a.$nome: (Quente/Frio) ")
         val clima = readln()
-        when (dias) {
-            1 -> {
-                itensEssencial.listEssencial(itens)
-                when (clima) {
-                    "Quente" -> {
-                        println("Adicione estes itens: ")
-                    }
-                    "Frio" -> {
+        essencial.listEssencial()
 
-                    }
-                    else -> {
-                        println("CLIMA INVÁLIDO")
-                    }
-                }
+        when (clima) {
+            "Quente" -> {
+                println("Adicione estes itens, Sr/a.$nome: ")
+                quente.listItensCalor()
             }
+            "Frio" -> {
+                println("Adicione estes itens, Sr/a.$nome: ")
+                frio.listItensFrio()
+            }
+            else -> println("CLIMA INVÁLIDO >:(")
+        }
+
+        println("\nQuer adicionar bugigangas, Sr/a. $nome? (S/N)")
+        val bugi = readln()
+
+        if (bugi == "S") {
+            println("\n\nEntão adicione estes itens, Sr/a. $nome.")
+            bugigangas.listItensBugigangas()
+
+        } else if (bugi == "N")
+            println("\nEntão são só esses itens mesmo. Boa viagem, Sr/a.$nome.")
+            println("\nEsta é a lista dos itens escolhidos essenciais para sua viagem, Sr/a.$nome. ")
+
+        if (clima == "Quente" && bugi == "S") {
+            essencial.listEssencial()
+            quente.listItensCalor()
+            bugigangas.listItensBugigangas()
+            break
+
+        } else if (clima == "Frio" && bugi == "S") {
+            essencial.listEssencial()
+            frio.listItensFrio()
+            bugigangas.listItensBugigangas()
+            break
+
+        } else if (clima == "Quente" && bugi == "N") {
+            essencial.listEssencial()
+            break
+
+        } else if (clima == "Frio" && bugi == "N") {
+            essencial.listEssencial()
+            frio.listItensFrio()
+            break
+        }
+
+        Funcionalidades.run {
+            qntddParteCima(dias)
+            qntddParteBaixo(dias)
+            qntddRoupasInt(dias)
         }
     }
 }
+
+
+
 
 
 
