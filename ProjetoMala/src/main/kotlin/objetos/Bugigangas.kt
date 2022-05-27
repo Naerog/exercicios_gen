@@ -1,7 +1,7 @@
 package objetos
 
-class Bugigangas () : Essenciais() {
-     var itensBugigangasEs = listOf(
+class Bugigangas : Essenciais() {
+     private var itensBugigangasEs = listOf(
           "Câmera Fotográfica", "Prendedor de Cabelo", "Consoles Portáteis",
           "Óculos", "Livros", "Fone de Ouvido", "Cadeados")
 

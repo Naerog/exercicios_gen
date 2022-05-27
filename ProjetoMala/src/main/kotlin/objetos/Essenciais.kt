@@ -15,10 +15,14 @@ open class Essenciais {
 
     }
     open fun listItensCalor() {
+        println("\n--- ITENS DE CALOR ---")
+
         println("\nNão esqueça de adicionar esses itens:")
     }
 
     open fun listItensFrio() {
+        println("\n--- ITENS DE FRIO ---")
+
         println("\nNão esqueça de adicionar esses itens:")
     }
     open fun listItensBugigangas() {

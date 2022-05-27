@@ -8,12 +8,12 @@ fun main() {
     val quente = Quente()
     val frio = Frio()
     val bugigangas = Bugigangas()
-
-    while (true) {
+    var loop = true
+    while (loop) {
         println("\n--- ORGANIZAÇÃO DE MALAS ---\n")
         print("Digite seu nome: ")
         val nome = readln()
-        print("Digite quantos dias de viagem, Sr/a.$nome ")
+        print("Digite quantos dias de viagem, Sr/a.$nome: ")
         val dias = readln().toInt()
         print("Digite o clima, Sr/a.$nome: (Quente/Frio) ")
         val clima = readln()
@@ -52,22 +52,27 @@ fun main() {
             essencial.listEssencial()
             frio.listItensFrio()
             bugigangas.listItensBugigangas()
-            break
+
 
         } else if (clima == "Quente" && bugi == "N") {
             essencial.listEssencial()
-            break
+
 
         } else if (clima == "Frio" && bugi == "N") {
             essencial.listEssencial()
             frio.listItensFrio()
-            break
+
         }
 
         Funcionalidades.run {
             qntddParteCima(dias)
             qntddParteBaixo(dias)
             qntddRoupasInt(dias)
+        }
+        println("\nQuer fazer outra consulta? Enter ou N para sair")
+        val opc = readln()
+        if (opc == "N") {
+            loop = false
         }
     }
 }
